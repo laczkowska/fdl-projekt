@@ -62,10 +62,6 @@ W branży kosmetycznej generowane są miliony recenzji rocznie. Automatyczna kla
   - Fusion: Concatenate → Dense layers
 - **Parametry**: 821,473
 
-### Model 1b: MLP + PCA (Bonus)
-- **Input**: Features po redukcji wymiarowości (PCA)
-- Zachowuje 95% wariancji z mniejszą liczbą komponentów
-
 ---
 
 ## Wyniki
