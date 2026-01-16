@@ -1,0 +1,44 @@
+{
+  "model1": {
+    "auc": 0.9825624605452404,
+    "acc": 0.9623926281929016,
+    "f1": 0.9772848973695968,
+    "params": 13697
+  },
+  "model2": {
+    "auc": 0.9088170405513579,
+    "acc": 0.8711874485015869,
+    "f1": 0.921209928829626,
+    "params": 820097
+  },
+  "model3": {
+    "auc": 0.9722671274331792,
+    "acc": 0.9431447982788086,
+    "f1": 0.965541988083297,
+    "params": 821473
+  },
+  "features": [
+    "rating_val",
+    "price",
+    "is_expensive",
+    "helpfulness_val",
+    "text_len",
+    "word_cnt",
+    "avg_word_len",
+    "exclamation_cnt",
+    "question_cnt",
+    "primary_category_enc",
+    "primary_category_Skincare",
+    "secondary_category_enc",
+    "secondary_category_Moisturizers",
+    "secondary_category_Treatments",
+    "secondary_category_Cleansers",
+    "skin_type_enc",
+    "skin_type_combination",
+    "skin_type_dry",
+    "skin_type_normal"
+  ],
+  "vocab_size": 5000,
+  "max_len": 120,
+  "best_model": "Model 1 (MLP)"
+}
