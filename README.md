@@ -122,7 +122,7 @@ python train_all_models.py
 
 ---
 
-## 📁 Struktura projektu
+## Struktura projektu
 ```
 fdl-projekt/
 │
