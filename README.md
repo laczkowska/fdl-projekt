@@ -1,10 +1,6 @@
 # Sephora Product Recommendation Prediction
 **Multi-Modal Deep Learning for Cosmetics Review Classification**
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-
 ## Opis problemu
 
 Projekt rozwiązuje problem **klasyfikacji binarnej** recenzji produktów kosmetycznych:
