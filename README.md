@@ -22,7 +22,7 @@ W branży kosmetycznej generowane są miliony recenzji rocznie. Automatyczna kla
 
 ## Dataset
 
-**Źródło**: [Kaggle - Sephora Products and Skincare Reviews]((https://www.kaggle.com/datasets/nadyinky/sephora-products-and-skincare-reviews?resource=download))
+**Źródło**: [Kaggle - Sephora Products and Skincare Reviews](https://www.kaggle.com/datasets/nadyinky/sephora-products-and-skincare-reviews?resource=download)
 
 **Statystyki**:
 - ~1,000,000 recenzji produktów kosmetycznych
@@ -75,7 +75,6 @@ W branży kosmetycznej generowane są miliony recenzji rocznie. Automatyczna kla
 | **Model 1 (MLP)** | **0.983** | **96.24%** | **0.96** | **0.96** | **0.96** | 13,697 |
 | Model 2 (BiLSTM) | 0.920 | 85.36% | 0.86 | 0.85 | 0.87 | 820,097 |
 | Model 3 (Fusion) | 0.964 | 94.31% | 0.94 | 0.94 | 0.95 | 821,473 |
-| Model 1b (PCA) | ~0.98 | ~96% | ~0.96 | - | - | <13,697 |
 
 ### Kluczowe wnioski
 **Proste modele tabelaryczne (MLP) przewyższają złożone architektury**  
@@ -130,29 +129,36 @@ fdl-projekt/
 ├── data/                          # Preprocessed data
 │   ├── X_text_train.npy
 │   ├── X_tab_train.npy
+│   ├── X_text_test.npy
+│   ├── y_test.npy
+│   ├── y_train.npy
 │   └── metadata.pkl
+│
+├── docs/                          # Article
+│   └── Predykcja Rekomendacji Kosmetyków przy Użyciu Multimodalnych Sieci Neuronowych.pdf 
 │
 ├── models/                        # Trained models
 │   ├── model1_mlp_final.keras
+│   ├── model1_best.keras
 │   ├── model2_bilstm_final.keras
+│   ├── model2_best.keras
 │   ├── model3_fusion_final.keras
-│   ├── model1b_pca.keras
+│   ├── model3_best.keras
 │   ├── scaler.pkl
 │   ├── tokenizer.pkl
-│   └── pca.pkl
-│
-├── results/                       # Visualizations
-│   ├── confusion_matrices_all.png
-│   ├── roc_curves_all.png
-│   ├── training_history_all.png
-│   └── pca_analysis.png
+│   └── all_models_metadata.json
 │
 ├── notebook/
 │   ├── sephora-reviews.ipynb      # Main notebook
 │   └── sephora-reviews.py
 │
-├── docs/
-│   └── Predykcja Rekomendacji Kosmetyków przy Użyciu Multimodalnych Sieci Neuronowych.pdf # Article
+├── results/                       # Visualizations
+│   ├── complexity_vs_performance.png
+│   ├── confusion_matrices_all.png
+│   ├── error_analysis_all.png
+│   ├── metrics_comparison.png
+│   ├── roc_curves_all.png
+│   └── training_history_all.png
 │                 
 ├── requirements.txt
 └── README.md
@@ -178,11 +184,7 @@ class AttentionLayer(layers.Layer):
 - GlobalMaxPooling (max signal)
 - GlobalAveragePooling (average signal)
 
-### 4. PCA Dimensionality Reduction
-- Redukcja z 19 → ~8 features (95% variance)
-- Zachowuje wydajność modelu
-
-### 5. Learning Rate Scheduling
+### 4. Learning Rate Scheduling
 - ReduceLROnPlateau: automatyczne zmniejszanie LR
 - AdamW optimizer: Adam + weight decay
 
@@ -198,9 +200,6 @@ class AttentionLayer(layers.Layer):
 
 ### Training History
 ![Training History](results/training_history_all.png)
-
-### PCA Analysis
-![PCA](results/pca_analysis.png)
 
 ---
 
@@ -238,5 +237,3 @@ Pełny artykuł dostępny w pliku: [`Predykcja Rekomendacji Kosmetyków przy Uż
 
 ---
 ---
-
-⭐ **Star this repo** if you find it helpful!
